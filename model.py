@@ -8,7 +8,7 @@ df = pd.read_csv('billing.csv')
 # Removing the first row with 0 cost 
 df = df[df['daily_cost'] != 0].copy()
 
-# Converting usage_date to datetime
+
 df['usage_date'] = pd.to_datetime(df['usage_date'])
 
 # Adding more features
