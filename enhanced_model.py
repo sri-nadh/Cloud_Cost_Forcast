@@ -89,11 +89,11 @@ grid_search = GridSearchCV(
 
 grid_search.fit(X_train, y_train, cat_features=categorical_features)
 
-# Best model
+# Taking Best model
 best_model = grid_search.best_estimator_
 print(f"Best parameters: {grid_search.best_params_}")
 
-# OPTIMIZATION 4: Comprehensive Evaluation
+# Comprehensive Evaluation
 predictions = best_model.predict(X_test)
 
 # Multiple evaluation metrics
