@@ -48,7 +48,7 @@ df['weekday_cos'] = np.cos(2 * np.pi * df['weekday'] / 7)
 df['month_sin'] = np.sin(2 * np.pi * df['month'] / 12)
 df['month_cos'] = np.cos(2 * np.pi * df['month'] / 12)
 
-# Remove rows with NaN values
+# Removing rows with NaN values
 df = df.dropna().copy()
 
 # Smart Feature Selection
@@ -79,6 +79,7 @@ param_grid = {
 # Use TimeSeriesSplit for proper time series validation
 tscv = TimeSeriesSplit(n_splits=3)
 
+# Intializing Catboost regression model
 model = CatBoostRegressor(verbose=0, random_state=42)
 
 # Grid search with time series CV
@@ -106,7 +107,7 @@ mape = np.mean(np.abs((y_test - predictions) / y_test)) * 100
 
 # Results
 print("\n" + "="*60)
-print("OPTIMIZED MODEL PERFORMANCE")
+print("MODEL PERFORMANCE")
 print("="*60)
 print(f"Mean Absolute Error (MAE): ${mae:.2f}")
 print(f"Root Mean Square Error (RMSE): ${rmse:.2f}")
