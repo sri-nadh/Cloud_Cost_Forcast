@@ -9,6 +9,7 @@ warnings.filterwarnings('ignore')
 
 df = pd.read_csv('billing.csv')
 
+# Removing the first row with 0 cost 
 df = df[df['daily_cost'] != 0].copy()
 
 df['usage_date'] = pd.to_datetime(df['usage_date'])
@@ -117,7 +118,7 @@ feature_importance = dict(zip(features, best_model.feature_importances_))
 sorted_features = sorted(feature_importance.items(), key=lambda x: x[1], reverse=True)
 
 
-# Sample predictions with detailed analysis
+# Sample predictions with evaluation metrics
 print(f"\nDetailed Sample Predictions:")
 print("-" * 50)
 
