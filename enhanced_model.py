@@ -76,7 +76,7 @@ param_grid = {
     'l2_leaf_reg': [1, 3, 5]
 }
 
-# Use TimeSeriesSplit for proper time series validation
+# Using TimeSeriesSplit for proper time series validation
 tscv = TimeSeriesSplit(n_splits=3)
 
 # Intializing Catboost regression model
