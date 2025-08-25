@@ -46,7 +46,7 @@ for name, importance in zip(features, model.feature_importances_):
     print(f"{name}: {importance:.2f}")
 
 
-# Displaying sample predictions for review
+# Displaying sample predictions 
 print("\nSample Predictions:")
 print("-" * 40)
 

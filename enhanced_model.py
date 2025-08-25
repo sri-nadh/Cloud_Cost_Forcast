@@ -60,7 +60,7 @@ cyclical_features = [col for col in df.columns if col.endswith(('_sin', '_cos'))
 basic_features = ['day_of_month']
 
 features = categorical_features + numerical_features + cyclical_features + basic_features
-print(f"Total features created: {len(features)}")
+print(f"Total Features Created: {len(features)}")
 
 X = df[features]
 y = df['daily_cost']
